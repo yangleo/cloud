@@ -1,0 +1,6 @@
+*.pyc
+*.pyo
+tmp
+a.sh
+b.sh
+

@@ -1,0 +1,278 @@
+@import "icons";
+@import "components/context_selection";
+@import "components/messages";
+@import "components/checkboxes";
+@import "components/hamburger";
+@import "components/help_panel";
+@import "components/magic_search";
+@import "components/navbar";
+@import "components/sidebar";
+
+
+
+.login .splash-logo {
+  width: 215px;
+}
+
+// General Layout Changes
+#sidebar {
+  overflow: hidden;
+  background-color:$color11;
+}
+
+#content_body {
+  transition: padding-left $sidebar-animation;
+  display: table-cell;
+  text-align:left; 
+  padding:0px; 
+  margin:0px;
+
+  @media (min-width: $screen-lg) {
+   
+  }
+}
+
+body {
+    background: $color1;
+    font-family: 'Microsoft YaHei','Microsoft YaHei UI', sans-serif;
+    line-height: 21px;
+    color: $color2;
+}
+
+#main_content {
+  display: block;
+  min-width: unset;
+  width: 100%;
+}
+.panel{
+    background: $color3;
+}
+#sidebar > a{
+    color: #fff;
+}
+.collapsed{
+    background-image: url(../img/plus-white.png) !important;
+}
+
+#sidebar .openstack-panel.active > a {
+    color: #fff;
+}
+#sidebar li.openstack-panel > a:active,
+#sidebar li.openstack-panel > a:hover {
+     background-color :$color4;
+     color: #fff;
+}
+#sidebar .openstack-dashboard >a:hover{
+    color:#fff;
+    background-color : $color5;
+}
+#sidebar .openstack-dashboard.active > a {
+    color:#fff;
+    background-color : $color9;
+}
+
+#sidebar-accordion-project > li.panel > a {
+    background: $color3;
+}
+#sidebar-accordion-project > li.panel > a:hover, 
+#sidebar-accordion-project > li.panel > a:active {
+    color: #fff;
+    background-color: $color5;
+}
+
+
+#sidebar-accordion-admin > li.panel > a {
+    background: $color3;
+}
+#sidebar-accordion-admin > li.panel > a:hover, 
+#sidebar-accordion-admin > li.panel > a:active {
+    color: #fff;
+    background-color: $color5;
+}
+
+
+#sidebar-accordion-identity > li.panel > a {
+    background: $color3;
+}
+#sidebar-accordion-identity > li.panel > a:hover, 
+#sidebar-accordion-identity > li.panel > a:active {
+    color: #fff;
+    background-color: $color5;
+}
+
+#sidebar > li.selenium-active > a {
+    color:#fff;
+    background-color:$color5;
+    background: transparent url(../img/plus.png) no-repeat 92% center;
+}
+#sidebar .openstack-dashboard.active > a:focus{
+    background-color:$color5;
+}
+
+#sidebar li.openstack-dashboard a {
+    background: transparent url(../img/minus.png) no-repeat 92% center;
+}
+
+
+
+
+#sidebar .openstack-dashboard > a, 
+#sidebar .openstack-panel > a,
+#sidebar .nav-header > a {
+   color:$color6;
+}
+
+#sidebar .openstack-dashboard > a:focus, 
+#sidebar .openstack-panel > a:focus, 
+#sidebar .nav-header > a:focus {
+    background-color: $color5;
+}
+
+#navbar-collapse {
+    background:$color7;
+}
+
+#navbar-collapse > a {
+    color: #fff;
+}
+.dropdown-toggle {
+    background-color:$color8;
+}
+.navbar-default .navbar-nav > li > a {
+    color : #fff;
+}
+.navbar-brand {
+    width:240px;
+    background-color:$color9 !important;
+}
+.navbar-brand a:hover{
+    background-color:$color9;
+}
+.navbar-brand img {
+    max-height:34px;
+}
+.navbar-nav > li > a:focus {
+    color:#fff;
+}
+
+.container-fluid {
+    background:$color10;
+}
+
+.btn-primary,
+.btn-default{
+    color:#fff;
+    background-color:$color12;
+}
+
+.btn-primary:hover, 
+.btn-default:hover,
+.btn-primary:focus, 
+.btn-default:focus,
+.btn-primary:active, 
+.btn-default:active,
+.btn-primary.active,
+.btn-default.active,
+.open > .btn-primary.dropdown-toggle {
+    color:#fff;
+    background-color:$color13;
+}
+
+.alert-danger{
+    color:#fff;
+    background-color:$color14;
+}
+
+
+
+
+// Border radius is unattractive here
+.navbar {
+  border-radius: 0;
+
+  // Must adhere to the bootstrap standards, so navbar elements must
+  // inherit from respective navbar-link color.
+  &-default {
+    .navbar-brand {
+      svg {
+        fill: $navbar-default-link-active-color;
+      }
+    }
+
+    .md-hamburger-layer {
+      background: $navbar-default-link-color;
+
+      &:hover {
+        background: $navbar-default-link-hover-color;
+      }
+    }
+  }
+
+  &-inverse {
+    .navbar-brand {
+      svg {
+        fill: $navbar-inverse-link-active-color;
+      }
+    }
+
+    .md-hamburger-layer {
+      background: $navbar-inverse-link-color;
+
+      &:hover {
+        background: $navbar-inverse-link-hover-color;
+      }
+    }
+
+    @media (max-width: $screen-sm) {
+      .dropdown-header {
+        color: $navbar-inverse-link-color;
+      }
+    }
+  }
+}
+
+.navbar-brand {
+  svg {
+    height: $navbar-height - $padding-small-horizontal*2;
+    margin-top: $padding-small-horizontal;
+    display: inline-block;
+  }
+}
+
+// Hamburger menu only shows on smaller screen sizes
+.navbar-header .md-hamburger {
+  display: none;
+
+  @media (max-width: $screen-lg) {
+    display: inline-block;
+    float: left;
+
+    & > button {
+      padding: $navbar-padding-vertical $navbar-padding-horizontal;
+      height: $navbar-height;
+    }
+  }
+}
+
+// The mask that the hamburger menu uses to apply an opacity
+// to the entire page when in smaller screen
+#md-hamburger-mask {
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  transform: translateZ(0);
+  visibility: hidden;
+  opacity: 0;
+  width: 100%;
+  z-index: 2;
+  transition: all $hamburger-transition;
+
+  @media (max-width: $screen-lg) {
+    &.active {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}
